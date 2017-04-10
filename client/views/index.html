@@ -12,6 +12,20 @@
 
   </head>
   <body>
-
+    <h1>Message Board</h1>
+    <div ng-controller="FirstController">
+      <div>
+        <input type="text" id="enterName" ng-model="newMessage.name" placeholder="enter name">
+        <br>
+        <input type="text" id="enterMessage" ng-model="newMessage.message" placeholder="enter message">
+        <br>
+        <button type="button" id="submitButton" ng-click="postData(newMessage)">Submit</button>
+      </div>
+    </div>
+    <div ng-controller="SecondController">
+      <div ng-repeat="message in messageObject.messages">
+        <p>{{message.name + ":    " + message.message}}</p>
+      </div>
+    </div>
   </body>
 </html>
